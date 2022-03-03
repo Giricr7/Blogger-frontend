@@ -33,7 +33,7 @@
       "react-app/jest"
     ]
   },
-  "proxy":"http://localhost:5000",
+  "proxy":"https://compassionate-benz-b3e275.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",
