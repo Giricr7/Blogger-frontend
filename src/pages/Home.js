@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("/posts")
+      .get("https://hallbooking-app.herokuapp.com/posts")
       .then((res) => {
         setPosts(res.data.reverse());
         setLoading(false);
@@ -23,7 +23,7 @@ export default function Home() {
       });
     if (sessionStorage.getItem("isLogged")) {
       axios
-        .get("/posts/own/" + sessionStorage.getItem("id"))
+        .get("https://hallbooking-app.herokuapp.com/posts/own/" + sessionStorage.getItem("id"))
         .then((res) => {
           setOwnPost(res.data.reverse());
           console.log(res.data);

@@ -19,7 +19,7 @@ export default function EditPost() {
     setTitle("");
     setParagraph("");
     axios
-      .put("/posts/update/" + id, newArticle)
+      .put("https://hallbooking-app.herokuapp.com/posts/update/" + id, newArticle)
       .then((res) => {
         console.log(res.data);
         Swal("Success!", "You post is saved!", "success");
@@ -30,7 +30,7 @@ export default function EditPost() {
   };
   useEffect(() => {
     axios
-      .get("/posts/" + id)
+      .get("https://hallbooking-app.herokuapp.com/posts/" + id)
       .then((res) => {
         setTitle(res.data.title);
         setParagraph(res.data.paragraph);
