@@ -5,7 +5,7 @@ import Swal from 'sweetalert'
 export default function CreatePost() {
   const [title, setTitle] = useState("");
   const [paragraph, setParagraph] = useState("");
-  const [message, setMessage] = useState("");
+  
 
   const submitTheData = (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ export default function CreatePost() {
       })
       .catch((err) => {
         console.log(err);
-        Swal("Error!", "Some Error Occured. ${err} Try Again", "error");
+        Swal("Error!", `Some Error Occured. ${err} Try Again`, "error");
       });
   };
 
