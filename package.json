@@ -33,7 +33,7 @@
       "react-app/jest"
     ]
   },
-  "proxy":"https://compassionate-benz-b3e275.netlify.app/",
+  "proxy":"https://myblogger-backend.herokuapp.com/",
   "browserslist": {
     "production": [
       ">0.2%",
