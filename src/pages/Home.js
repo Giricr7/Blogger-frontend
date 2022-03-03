@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PostsList from "../component/PostsList";
 import "../css/homeStyle.css";
-import {ClimbingBoxLoader} from 'react-spinners'
+import { ClimbingBoxLoader } from 'react-spinners';
+import URL from "../url";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -12,8 +13,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://myblogger-backend.herokuapp.com/posts")
+    axios.get(`${URL}/posts`)
       .then((res) => {
         setPosts(res.data.reverse());
         setLoading(false);
@@ -22,8 +22,7 @@ export default function Home() {
         console.log(err);
       });
     if (sessionStorage.getItem("isLogged")) {
-      axios
-        .get("https://myblogger-backend.herokuapp.com/posts/own/" + sessionStorage.getItem("id"))
+      axios.get(`${URL}/posts/own/` + sessionStorage.getItem("id"))
         .then((res) => {
           setOwnPost(res.data.reverse());
           console.log(res.data);

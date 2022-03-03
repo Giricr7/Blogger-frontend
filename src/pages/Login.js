@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../css/loginCss.css";
+import URL from "../url";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -14,8 +15,7 @@ export default function Login() {
       email: email,
       password: password,
     };
-    axios
-      .post("https://myblogger-backend.herokuapp.com/user/signin", user)
+    axios.post(`${URL}/user/signin`, user)
       .then((res) => {
         if (res.data.isLogged) {
           sessionStorage.setItem("isLogged", res.data.isLogged);

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import Swal from "sweetalert";
+import URL from "../url";
 
 export default function EditPost() {
   const [title, setTitle] = useState("");
@@ -18,8 +19,7 @@ export default function EditPost() {
     };
     setTitle("");
     setParagraph("");
-    axios
-      .put("https://myblogger-backend.herokuapp.com/posts/update/" + id, newArticle)
+    axios.put(`${URL}/posts/update/` + id, newArticle)
       .then((res) => {
         console.log(res.data);
         Swal("Success!", "You post is saved!", "success");
@@ -30,7 +30,7 @@ export default function EditPost() {
   };
   useEffect(() => {
     axios
-      .get("https://myblogger-backend.herokuapp.com/posts/" + id)
+      .get(`${URL}/posts/` + id)
       .then((res) => {
         setTitle(res.data.title);
         setParagraph(res.data.paragraph);

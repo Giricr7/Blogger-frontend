@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Swal from 'sweetalert'
+import Swal from 'sweetalert';
+import URL from "../url";
 
 export default function CreatePost() {
   const [title, setTitle] = useState("");
@@ -17,9 +18,7 @@ export default function CreatePost() {
     };
     setTitle("");
     setParagraph("");
-    axios
-      .post("https://myblogger-backend.herokuapp.com/posts/create", newArticle)
-      .then((res) => {
+    axios.post(`${URL}/posts/create`, newArticle).then((res) => {
         Swal("Success!", "You post is saved!", "success");
       })
       .catch((err) => {

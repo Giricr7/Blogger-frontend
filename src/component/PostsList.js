@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Swal from 'sweetalert';
-import moment from 'moment'
+import moment from 'moment';
+import URL from "../url";
 
 export default function PostsList(props) {
   const [article, setArticle] = useState([]);
 
   const deletePost = (id) => {
-    axios
-      .delete("https://myblogger-backend.herokuapp.com/posts/delete/" + id)
+    axios.delete(`${URL}/posts/delete/` + id)
       .then((res) => {
         Swal("Success!", "You post is deleted Successfully!", "success");
         setArticle(article.filter((elem) => elem._id !== id));

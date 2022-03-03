@@ -3,9 +3,10 @@ import axios from "axios";
 import { useParams } from "react-router";
 import "../css/homeStyle.css";
 import { Link } from "react-router-dom";
-import { ClimbingBoxLoader } from 'react-spinners'
-import Swal from "sweetalert"
+import { ClimbingBoxLoader } from 'react-spinners';
+import Swal from "sweetalert";
 import moment from "moment";
+import URL from "../url";
 
 export default function Post() {
   const [title, setTitle] = useState("");
@@ -20,8 +21,7 @@ export default function Post() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios
-      .get("https://myblogger-backend.herokuapp.com/posts/" + id)
+    axios.get(`${URL}/posts/` + id)
       .then((res) => {
         setTitle(res.data.title);
         setParagraph(res.data.paragraph);
@@ -41,8 +41,7 @@ export default function Post() {
     e.preventDefault();
     setCommentAuthor(sessionStorage.getItem("username"));
     const sendComment = { comment: message, author: commentAuthor };
-    axios
-      .put("https://myblogger-backend.herokuapp.com/posts/comment-add/" + postId, sendComment)
+    axios.put(`${URL}/posts/comment-add/` + postId, sendComment)
       .then(() => {
         setMessage("");
         Swal("Success!", `Comments added! -by ${commentAuthor}`, "success");
