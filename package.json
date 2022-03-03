@@ -33,7 +33,7 @@
       "react-app/jest"
     ]
   },
-  "proxy":"https://myblogger-backend.herokuapp.com/",
+  "proxy":"https://myblogger-backend.herokuapp.com",
   "browserslist": {
     "production": [
       ">0.2%",
