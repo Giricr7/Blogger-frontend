@@ -15,7 +15,7 @@ export default function Login() {
       password: password,
     };
     axios
-      .post("http://localhost:5000/user/signin", user)
+      .post("/user/signin", user)
       .then((res) => {
         if (res.data.isLogged) {
           sessionStorage.setItem("isLogged", res.data.isLogged);

@@ -9,7 +9,7 @@ export default function PostsList(props) {
 
   const deletePost = (id) => {
     axios
-      .delete("http://localhost:5000/posts/delete/" + id)
+      .delete("/posts/delete/" + id)
       .then((res) => {
         Swal("Success!", "You post is deleted Successfully!", "success");
         setArticle(article.filter((elem) => elem._id !== id));

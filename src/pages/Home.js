@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/posts")
+      .get("/posts")
       .then((res) => {
         setPosts(res.data.reverse());
         setLoading(false);
@@ -23,7 +23,7 @@ export default function Home() {
       });
     if (sessionStorage.getItem("isLogged")) {
       axios
-        .get("http://localhost:5000/posts/own/" + sessionStorage.getItem("id"))
+        .get("/posts/own/" + sessionStorage.getItem("id"))
         .then((res) => {
           setOwnPost(res.data.reverse());
           console.log(res.data);

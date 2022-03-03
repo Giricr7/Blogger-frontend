@@ -18,7 +18,7 @@ export default function CreatePost() {
     setTitle("");
     setParagraph("");
     axios
-      .post("http://localhost:5000/posts/create", newArticle)
+      .post("/posts/create", newArticle)
       .then((res) => {
         Swal("Success!", "You post is saved!", "success");
       })

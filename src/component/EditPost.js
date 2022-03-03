@@ -19,7 +19,7 @@ export default function EditPost() {
     setTitle("");
     setParagraph("");
     axios
-      .put("http://localhost:5000/posts/update/" + id, newArticle)
+      .put("/posts/update/" + id, newArticle)
       .then((res) => {
         console.log(res.data);
         Swal("Success!", "You post is saved!", "success");
@@ -30,7 +30,7 @@ export default function EditPost() {
   };
   useEffect(() => {
     axios
-      .get("http://localhost:5000/posts/" + id)
+      .get("/posts/" + id)
       .then((res) => {
         setTitle(res.data.title);
         setParagraph(res.data.paragraph);

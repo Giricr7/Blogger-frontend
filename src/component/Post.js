@@ -21,7 +21,7 @@ export default function Post() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/posts/" + id)
+      .get("/posts/" + id)
       .then((res) => {
         setTitle(res.data.title);
         setParagraph(res.data.paragraph);
@@ -42,7 +42,7 @@ export default function Post() {
     setCommentAuthor(sessionStorage.getItem("username"));
     const sendComment = { comment: message, author: commentAuthor };
     axios
-      .put("http://localhost:5000/posts/comment-add/" + postId, sendComment)
+      .put("/posts/comment-add/" + postId, sendComment)
       .then(() => {
         setMessage("");
         Swal("Success!", `Comments added! -by ${commentAuthor}`, "success");
