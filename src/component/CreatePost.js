@@ -18,7 +18,7 @@ export default function CreatePost() {
     setTitle("");
     setParagraph("");
     axios
-      .post("https://hallbooking-app.herokuapp.com/posts/create", newArticle)
+      .post("https://myblogger-backend.herokuapp.com/posts/create", newArticle)
       .then((res) => {
         Swal("Success!", "You post is saved!", "success");
       })

@@ -15,7 +15,7 @@ export default function Login() {
       password: password,
     };
     axios
-      .post("https://hallbooking-app.herokuapp.com/user/signin", user)
+      .post("https://myblogger-backend.herokuapp.com/user/signin", user)
       .then((res) => {
         if (res.data.isLogged) {
           sessionStorage.setItem("isLogged", res.data.isLogged);

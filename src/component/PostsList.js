@@ -9,7 +9,7 @@ export default function PostsList(props) {
 
   const deletePost = (id) => {
     axios
-      .delete("https://hallbooking-app.herokuapp.com/posts/delete/" + id)
+      .delete("https://myblogger-backend.herokuapp.com/posts/delete/" + id)
       .then((res) => {
         Swal("Success!", "You post is deleted Successfully!", "success");
         setArticle(article.filter((elem) => elem._id !== id));

@@ -21,7 +21,7 @@ export default function Post() {
 
   useEffect(() => {
     axios
-      .get("https://hallbooking-app.herokuapp.com/posts/" + id)
+      .get("https://myblogger-backend.herokuapp.com/posts/" + id)
       .then((res) => {
         setTitle(res.data.title);
         setParagraph(res.data.paragraph);
@@ -42,7 +42,7 @@ export default function Post() {
     setCommentAuthor(sessionStorage.getItem("username"));
     const sendComment = { comment: message, author: commentAuthor };
     axios
-      .put("https://hallbooking-app.herokuapp.com/posts/comment-add/" + postId, sendComment)
+      .put("https://myblogger-backend.herokuapp.com/posts/comment-add/" + postId, sendComment)
       .then(() => {
         setMessage("");
         Swal("Success!", `Comments added! -by ${commentAuthor}`, "success");
