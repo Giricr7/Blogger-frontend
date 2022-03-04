@@ -17,7 +17,6 @@ export default function Home() {
     axios.get(`${URL}/posts`)
       .then((res) => {
         setPosts(res.data.reverse());
-        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
