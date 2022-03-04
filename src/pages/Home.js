@@ -4,6 +4,7 @@ import PostsList from "../component/PostsList";
 import "../css/homeStyle.css";
 import { ClimbingBoxLoader } from 'react-spinners';
 import URL from "../url";
+import noposts from '../assets/noposts.jpg'
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -37,11 +38,9 @@ export default function Home() {
       <div className="card-header mt-2 mb-3">Latest Posts</div>
       {!posts.length ? (
         <div className="spinner-parent">
-          
-          
-            <ClimbingBoxLoader color={'#4a148c'} loading={loading} />
-
-          
+            <h2>No posts yet</h2>          
+            <img src={noposts} ></img>
+            <ClimbingBoxLoader color={'#4a148c'} loading={loading} /> 
         </div>
       ) : (
         posts.slice(0, count).map((post, key) => {
