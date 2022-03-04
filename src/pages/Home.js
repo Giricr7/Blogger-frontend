@@ -11,7 +11,7 @@ export default function Home() {
   const [ownPost, setOwnPost] = useState([]);
   const [count, setCount] = useState(2);
   const [count2, setCount2] = useState(2);
-  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     axios.get(`${URL}/posts`)
@@ -39,7 +39,7 @@ export default function Home() {
         <div className="spinner-parent">
             <h2>No posts yet</h2>          
             <img src={noposts} alt='' ></img>
-            <ClimbingBoxLoader color={'#4a148c'} loading={loading} /> 
+            <ClimbingBoxLoader color={'#4a148c'} /> 
         </div>
       ) : (
         posts.slice(0, count).map((post, key) => {
