@@ -39,7 +39,7 @@ export default function Home() {
         <div className="spinner-parent">
             <h2>No posts yet</h2>          
             <img src={noposts} alt='' ></img>
-            <ClimbingBoxLoader color={'#4a148c'} /> 
+            <ClimbingBoxLoader color={'#1565c0'} /> 
         </div>
       ) : (
         posts.slice(0, count).map((post, key) => {
