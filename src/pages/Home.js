@@ -39,7 +39,7 @@ export default function Home() {
       {!posts.length ? (
         <div className="spinner-parent">
             <h2>No posts yet</h2>          
-            <img src={noposts} ></img>
+            <img src={noposts} alt='' ></img>
             <ClimbingBoxLoader color={'#4a148c'} loading={loading} /> 
         </div>
       ) : (
