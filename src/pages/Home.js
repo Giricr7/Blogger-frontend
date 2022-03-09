@@ -34,7 +34,7 @@ export default function Home() {
   });
   return (
     <div className="container card">
-      <div className="card-header mt-2 mb-3">Latest Posts</div>
+      <div className="card-header mt-2 mb-3">Latest Posts (from every user)</div>
       {!posts.length ? (
         <div className="spinner-parent">
             <h2>No posts yet</h2>          
